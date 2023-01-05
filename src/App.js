@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { BrowserRouter } from "react-router-dom";
+import classnames from "classnames";
+
+import Header from "./components/header";
+import Sidebar from "./components/sidebar";
+
+import UserRoutes from "./dashbase/routes";
 
 function App() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div
+        className={classnames("dashboard", {
+          hide_sidebar: isSidebarOpen,
+        })}
+      >
+        <Sidebar
+          open={isSidebarOpen}
+          toggle={() => setIsSidebarOpen(!isSidebarOpen)}
+        />
+
+        <div className="dashboard_content">
+          {window.innerWidth < 769 && (
+            <Header
+              open={isSidebarOpen}
+              toggle={() => setIsSidebarOpen(!isSidebarOpen)}
+            />
+          )}
+
+          <UserRoutes />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 

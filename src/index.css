@@ -1,13 +1,122 @@
-body {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+}
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background: #fff;
+  font-family: "Inter";
+  font-size: 1em;
+  font-weight: 400;
+}
+
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+button,
+span,
+input {
+  margin: 0;
+  font-family: "Inter" !important;
+}
+
+a,
+a:active,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  box-shadow: none !important;
+  outline: 0 !important;
+  border: 1px solid #D0D5DD;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  border-radius: 8px;
+}
+
+.dashboard {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 1800px;
+  width: 100%;
+  min-height: 100vh;
+  /* overflow-x: hidden; */
+}
+
+.dashboard.hide_sidebar.sidebar_container {
+  display: none;
+}
+.dashboard.hide_sidebar.dashboard_content {
+  width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .sidebar_container.open::after {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin-left: 255px;
+    content: "";
+    background: rgba(0, 0, 0, 0.45);
+  }
+}
+
+.sidebar_container .sidebar_container_inner::-webkit-scrollbar {
+  width: 0px;
+}
+.sidebar_container .sidebar_container_inner::-webkit-scrollbar-thumb {
+  width: 0px;
+}
+
+.dashboard .dashboard_content {
+  position: relative;
+  margin: 0 0 0 auto;
+  padding: 20px 30px 50px 30px;
+  width: calc(100% - 255px);
+  min-height: 100vh;
+}
+@media screen and (max-width: 769px) {
+  .dashboard .dashboard_content {
+    padding: 0px 12px 50px 12px;
+    width: 100%;
+  }
+}
+
+.vertical_scroll {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.vertical_scroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+.vertical_scroll::-webkit-scrollbar-thumb {
+  width: 0px;
+  height: 0px;
 }
