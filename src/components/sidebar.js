@@ -8,6 +8,7 @@ import Header from "./header";
 
 import Icon from "../assets/svg";
 import { bannerImg, avatar } from "../assets/img";
+import FormInput from "./form-input";
 
 const Navlink = ({ nav, handleSidebarToggle }) => (
   <NavLink
@@ -37,6 +38,7 @@ const Navlink = ({ nav, handleSidebarToggle }) => (
 
 const Sidebar = ({ open, toggle }) => {
   const [showBanner, setShowBanner] = useState(true);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSidebarToggle = () => {
     if (window.innerWidth < 769) {
@@ -63,6 +65,17 @@ const Sidebar = ({ open, toggle }) => {
     >
       <div className="sidebar_container_inner p-0 pb-[82px] md:pb-[32px] md:pt-[32px] h-[100vh] w-full md:w-[279px] overflow-y-scroll bg-white">
         {window.innerWidth > 769 && <Header open={open} toggle={toggle} />}
+
+        <div className="mt-[24px] px-[16px]">
+          <FormInput
+            icon="search"
+            name="alternativeEmail"
+            type="email"
+            placeholder="Search"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+        </div>
 
         <div className="flex flex-col mt-[24px] px-[16px] gap-[4px]">
           {topNavs?.map((nav, i) => (

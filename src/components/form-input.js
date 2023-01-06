@@ -21,7 +21,7 @@ const FormInput = ({
         type={type}
         placeholder={placeholder}
         value={value}
-        className="form-control text-[15px] tracking-[0.01em]"
+        className="form-control text-[15px] tracking-[0.01em] bg-transparent"
         onChange={onChange}
         {...rest}
       />
