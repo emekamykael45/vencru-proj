@@ -145,7 +145,7 @@ const Billing = () => {
       id: 2,
       name: "Basic Plan – Dec 2022",
       status: "Paid",
-      amount: "$10.00",
+      amount: "$12.30",
       date: "Dec 1, 2022",
       users: [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV-REr89iWROi6ScePs5agSIHpG9BPBDDZ_g&usqp=CAU",
