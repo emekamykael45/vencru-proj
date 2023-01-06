@@ -15,6 +15,7 @@ const Navigations = [
     icon: "dashboard",
     label: "Dashboard",
     to: "/dashboard",
+    badge: 10,
     component: <Page />,
   },
   {

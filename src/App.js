@@ -13,16 +13,22 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        className={classnames("dashboard", {
-          hide_sidebar: isSidebarOpen,
-        })}
+        className={classnames(
+          "dashboard flex justify-start items-start min-h-[100vh]",
+          {
+            hide_sidebar: isSidebarOpen,
+          }
+        )}
       >
         <Sidebar
           open={isSidebarOpen}
           toggle={() => setIsSidebarOpen(!isSidebarOpen)}
         />
 
-        <div className="dashboard_content">
+        <div
+          className="dashboard_content m-[0_0_0_auto] p-[0px_0px_50px_0px] md:p-[32px_30px_50px_30px]
+          min-h-[100vh] bg-gray-50"
+        >
           {window.innerWidth < 769 && (
             <Header
               open={isSidebarOpen}

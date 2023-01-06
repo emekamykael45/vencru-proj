@@ -17,19 +17,13 @@
 }
 
 body {
-  background: #fff;
+  background: #F9FAFB;
   font-family: "Inter";
   font-size: 1em;
   font-weight: 400;
 }
 
 div,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
 p,
 a,
 button,
@@ -51,19 +45,13 @@ input:focus, input:active,
 button:focus, button:active {
   box-shadow: none !important;
   outline: 0 !important;
-  border: 1px solid #D0D5DD;
-  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-  border-radius: 8px;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 .dashboard {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   max-width: 1800px;
   width: 100%;
-  min-height: 100vh;
-  /* overflow-x: hidden; */
 }
 
 .dashboard.hide_sidebar.sidebar_container {
@@ -71,19 +59,6 @@ button:focus, button:active {
 }
 .dashboard.hide_sidebar.dashboard_content {
   width: 100%;
-}
-
-@media screen and (max-width: 769px) {
-  .sidebar_container.open::after {
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    margin-left: 255px;
-    content: "";
-    background: rgba(0, 0, 0, 0.45);
-  }
 }
 
 .sidebar_container .sidebar_container_inner::-webkit-scrollbar {
@@ -95,16 +70,27 @@ button:focus, button:active {
 
 .dashboard .dashboard_content {
   position: relative;
-  margin: 0 0 0 auto;
-  padding: 20px 30px 50px 30px;
-  width: calc(100% - 255px);
-  min-height: 100vh;
+  width: calc(100% - 279px);
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 767px) {
   .dashboard .dashboard_content {
-    padding: 0px 12px 50px 12px;
     width: 100%;
   }
+}
+
+.close_menu svg {
+  width: 24px;
+  height: 24px;
+}
+
+.input-box-shadow {
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.shadow-xs {
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+.shadow-md {
+  box-shadow: 0px 4px 8px -2px rgba(16, 24, 40, 0.1), 0px 2px 4px -2px rgba(16, 24, 40, 0.06);
 }
 
 .vertical_scroll {

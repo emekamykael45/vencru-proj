@@ -5,15 +5,27 @@ import Icon from "../assets/svg";
 const Header = ({ open, toggle }) => {
   return (
     <div
-      className="flex justify-between items-center p-[13px_0px] md:p-[0px_24px] w-full h-[60px] md:h-auto"
+      className="flex justify-between items-center p-[15px_16px] md:p-[0px_24px] w-full h-[60px] md:h-auto bg-white"
       onClick={() => toggle()}
     >
-      <div className="flex">
+      <div className="flex items-center">
         <Logo />
         <p className="font-medium text-[20px] pl-[10px]">Untitled UI</p>
       </div>
 
-      {window.innerWidth < 769 && <Icon name="dashboard" />}
+      {window.innerWidth < 769 && (
+        <>
+          {open ? (
+            <div className="close_menu rotate-[45deg]">
+              <Icon name="plus" />
+            </div>
+          ) : (
+            <div className="rotate-[270deg]">
+              <Icon name="dashboard" />
+            </div>
+          )}
+        </>
+      )}
     </div>
   );
 };
